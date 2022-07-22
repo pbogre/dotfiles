@@ -1,0 +1,1 @@
+mkdir ~/.zsh && curl --http1.1 "https://raw.githubusercontent.com/05e/dotfiles/main/zsh/completion.zsh" --output "~/.zsh/completion.zsh" && curl --http1.1 "https://raw.githubusercontent.com/05e/dotfiles/main/zsh/zshrc" --output "~/.zshrc"
