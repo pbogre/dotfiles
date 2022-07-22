@@ -1,5 +1,5 @@
 # dotfiles
-```
+```sh
 # download & install homebrew
 curl -O https://raw.githubusercontent.com/05e/dotfiles/main/install-homebrew.sh && ./install-homebrew.sh
 # download & install applications
