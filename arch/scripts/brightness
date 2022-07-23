@@ -1,0 +1,18 @@
+#! /bin/bash
+
+brightness=$(cat /sys/class/backlight/acpi_video0/brightness)
+
+# if is number
+case $1 in
+    ''|*[!0-9]*)  ;;
+    *) brightness=$1 ;;
+esac
+
+# 0<brightness<100
+if [ $brightness -lt 0 ]; then
+	brightness=0
+elif [ $brightness -gt 100 ]; then
+	brightness=100
+fi
+
+echo $brightness > /sys/class/backlight/acpi_video0/brightness
