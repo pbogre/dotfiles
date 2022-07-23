@@ -9,3 +9,4 @@
 - alsa-utils (audio)
 - xcompmgr (composite manager)
 - xorg (display server)
+- xorg-xinit (display server)
