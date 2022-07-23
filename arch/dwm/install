@@ -1,0 +1,1 @@
+git clone git://git.suckless.org/dwm & curl https://raw.githubusercontent/05e/dotfiles/main/arch/dwm/config.def.h > dwm/config.def.h & curl https://raw.githubusercontent/05e/dotfiles/main/arch/dwm/dwm.c > dwm/dwm.c & cd dwm & sudo make clean install
