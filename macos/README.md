@@ -1,4 +1,4 @@
-# dMacOS Dotfiles
+# MacOS Dotfiles
 
 ```sh
 # download & install homebrew
