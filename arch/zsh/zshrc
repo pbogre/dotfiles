@@ -1,5 +1,3 @@
 source ~/.zsh/completion.zsh
 PROMPT="%F{red}%n%f[%F{magenta}%2~%f] > "
-
-# Transparency with st
-transset-df "0.75" --id "$WINDOWID" >/dev/null
+alias brightness="~/.scripts/brightness"
