@@ -1,6 +1,5 @@
-# dotfiles
+# dMacOS Dotfiles
 
-## MacOS Dotfiles
 ```sh
 # download & install homebrew
 curl -O https://raw.githubusercontent.com/05e/dotfiles/main/install-homebrew && sudo chmod 777 install-homebrew && ./install-homebrew

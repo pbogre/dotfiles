@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# Keyboard Layout
+setxkbmap -layout it
+
+# Wallpaper
+feh --bg-scale ~/.scripts/dwm/wallpaper.jpg
+
+# Audio
+amixer -c 1 set Master on
+amixer -c 1 set Speaker on
+amixer -c 1 set Headphone on
+
+exec dwm

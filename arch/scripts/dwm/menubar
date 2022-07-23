@@ -1,0 +1,47 @@
+#! /bin/bash
+
+# Menu Bar Update
+get_date(){
+	echo -e "$(date +"%a %d, %H:%M")"
+}
+
+get_cpu(){
+	read cpu a b c previdle rest < /proc/stat
+	prevtotal=$((a+b+c+previdle))
+	sleep 0.5
+	read cpu a b c idle rest < /proc/stat
+	total=$((a+b+c+idle))
+
+	cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
+	echo -e "$cpu% CPU"
+}
+
+get_mem(){
+	mem=`free | awk '/Mem/ {printf "%d/%d\n", $3 / 1024.0, $2 / 1024.0}'`
+	echo -e "$mem Memory"
+}
+
+get_bat(){
+	charge=$(cat "/sys/class/power_supply/BAT0/capacity")
+	charging=$(cat "/sys/class/power_supply/BAT0/status")
+
+	status=""
+	if [ $charging == "Charging" ]; then
+		status="*"
+	fi
+	echo -e "$charge$status% Battery"
+ }
+
+get_vol(){
+	status=$(amixer -c 1 get Master | grep 'Mono:' | awk '{print $6}')
+	volume=$(amixer -c 1 get Master | grep 'Mono:' | awk '{print $4}')
+	#todo: only show status when [off]
+	echo -e "$volume$status Volume"
+}
+
+
+# Main Loop
+while true; do
+	xsetroot -name "  $(get_mem) | $(get_cpu) | $(get_bat) | $(get_vol) | $(get_date)  "
+	sleep 5s
+done &
