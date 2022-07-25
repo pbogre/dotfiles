@@ -40,5 +40,5 @@ get_vol(){
 # Main Loop
 while true; do
 	xsetroot -name "  $(get_mem) | $(get_cpu) | $(get_bat) | $(get_vol) | $(get_date)  "
-	sleep 3s
+	sleep 1s
 done &
