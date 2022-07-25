@@ -17,8 +17,8 @@ get_cpu(){
 }
 
 get_mem(){
-	mem=`free | awk '/Mem/ {printf "%d/%d\n", $3 / 1024.0, $2 / 1024.0}'`
-	echo -e "$mem Memory"
+	mem=$(free -m | awk 'NR==2{printf "%.2f\n", $3*100/$2 }')
+	echo -e "$mem% RAM"
 }
 
 get_bat(){
@@ -29,14 +29,17 @@ get_bat(){
 	if [ $charging == "Charging" ]; then
 		status="*"
 	fi
-	echo -e "$charge$status% Battery"
- }
+	echo -e "$status$charge% POW"
+}
 
 get_vol(){
-	status=$(amixer -c 1 get Master | grep 'Mono:' | awk '{print $6}')
-	volume=$(amixer -c 1 get Master | grep 'Mono:' | awk '{print $4}')
-	#todo: only show status when [off]
-	echo -e "$volume$status Volume"
+	status=$(amixer -c 1 get Master | grep 'Mono:' | awk '{print $6}' | sed 's/^.//;s/.$//')
+	volume=$(amixer -c 1 get Master | grep 'Mono:' | awk '{print $4}' | sed 's/^.//;s/.$//')
+	if [ $status == "off" ]; then
+		volume=""
+	else status=""
+	fi
+	echo -e "$volume$status VOL"
 }
 
 
