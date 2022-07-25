@@ -1,5 +1,18 @@
 # Arch Linux Dotfiles
 
+## Instructions
+```sh
+# dwm
+curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/dwm/README
+# st
+curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/README
+# scripts
+curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/scripts/README
+# zsh
+curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/zsh/README
+```
+
+
 ## Packages
 ### Style
 - ttf-firamono (font)
@@ -17,11 +30,3 @@
 ### Applications
 - keepassxc (password manager)
 - firefox (web browser)
-
-## Instructions
-```sh
-# dwm
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/dwm/README
-# st
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/README
-```
