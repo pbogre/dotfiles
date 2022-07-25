@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Wallpaper, Compositing Manager 
+# Compositing Manager 
 xcompmgr -c &
 
 # Start
