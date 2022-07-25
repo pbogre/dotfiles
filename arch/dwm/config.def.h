@@ -66,9 +66,9 @@ static const char *termcmd[]  = { "st", NULL };
 
 static const char *firefox[] = { "firefox", NULL };
 
-static const char *incvol[]   = { "amixer", "-c", "1", "set", "Master", "5%+", "&", "~/.scripts/dwm/menubar", NULL };
-static const char *decvol[]   = { "amixer", "-c", "1", "set", "Master", "5%-", "&", "~/.scripts/dwm/menubar", NULL };
-static const char *mutevol[]  = { "amixer", "-c", "1", "set", "Master", "toggle", "&", "~/.scripts/dwm/menubar", NULL };
+static const char *incvol[]   = { "amixer", "-c", "1", "set", "Master", "5%+",    NULL };
+static const char *decvol[]   = { "amixer", "-c", "1", "set", "Master", "5%-",    NULL };
+static const char *mutevol[]  = { "amixer", "-c", "1", "set", "Master", "toggle", NULL };
 
 static const char *incbr[]    = { "xbacklight", "-inc", "2", NULL };
 static const char *decbr[]    = { "xbacklight", "-dec", "2", NULL };
