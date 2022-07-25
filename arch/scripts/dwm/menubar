@@ -6,18 +6,12 @@ get_date(){
 }
 
 get_cpu(){
-	read cpu a b c previdle rest < /proc/stat
-	prevtotal=$((a+b+c+previdle))
-	sleep 0.5
-	read cpu a b c idle rest < /proc/stat
-	total=$((a+b+c+idle))
-
-	cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
+	cpu=$(top -bn1 | grep load | awk '{printf "%.1f\n", $(NF-2)}')
 	echo -e "$cpu% CPU"
 }
 
 get_mem(){
-	mem=$(free -m | awk 'NR==2{printf "%.2f\n", $3*100/$2 }')
+	mem=$(free -m | awk 'NR==2{printf "%.1f\n", $3*100/$2 }')
 	echo -e "$mem% RAM"
 }
 
@@ -46,5 +40,5 @@ get_vol(){
 # Main Loop
 while true; do
 	xsetroot -name "  $(get_mem) | $(get_cpu) | $(get_bat) | $(get_vol) | $(get_date)  "
-	sleep 5s
+	sleep 3s
 done &
