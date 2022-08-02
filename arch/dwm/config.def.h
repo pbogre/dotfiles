@@ -71,8 +71,8 @@ static const char *incvol[]   = { "amixer", "-c", "1", "set", "Master", "5%+",  
 static const char *decvol[]   = { "amixer", "-c", "1", "set", "Master", "5%-",    NULL };
 static const char *mutevol[]  = { "amixer", "-c", "1", "set", "Master", "toggle", NULL };
 
-static const char *incbr[]    = { "xbacklight", "-inc", "2", NULL };
-static const char *decbr[]    = { "xbacklight", "-dec", "2", NULL };
+static const char *incbr[]    = { "xbacklight", "-inc", "5", NULL };
+static const char *decbr[]    = { "xbacklight", "-dec", "5", NULL };
 
 
 static Key keys[] = {
