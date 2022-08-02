@@ -10,6 +10,8 @@ curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/README
 curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/scripts/README
 # zsh
 curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/zsh/README
+# nano
+curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/nano/README
 ```
 
 
