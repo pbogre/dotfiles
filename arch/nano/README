@@ -1,0 +1,1 @@
+curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/nano/nanorc > sudo /etc/nanorc
