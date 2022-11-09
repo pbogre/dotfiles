@@ -1,8 +1,0 @@
-colorscheme industry
-syntax on
-filetype indent on
-
-set number
-set nowrap
-set tabstop=6
-set shiftwidth=0
