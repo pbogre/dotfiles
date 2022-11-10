@@ -1,5 +1,7 @@
 export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 
+alias vim="nvim"
+
 ZSH_THEME="nanotech"
 plugins=(
 	git
