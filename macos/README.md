@@ -1,3 +1,5 @@
 ## Dependencies
 - [vim-plug](https://github.com/junegunn/vim-plug)
-- [oh-my-zsh](https://ohmyz.sh/)
+- [neovim](https://neovim.io/)
+- [oh-my-zsh](https://ohmyz.sh/) (Location: `.config/zsh/`)
+- [homebrew](https://brew.sh/)
