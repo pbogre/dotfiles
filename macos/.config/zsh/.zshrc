@@ -7,9 +7,13 @@ plugins=(
 	git
 )
 
+DISABLE_AUTO_TITLE="true"
+
 # move .zcompdump files
 autoload -Uz compinit
 compinit -d ~/.config/zsh/.zcompdump
 
+# environment 
 source $ZSH/oh-my-zsh.sh
 eval $(/opt/homebrew/bin/brew shellenv)
+export LD_LIBRARY_PATH="/Library/Developer/CommandLineTools/usr/lib/:$LD_LIBRARY_PATH"

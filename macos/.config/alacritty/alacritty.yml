@@ -1,3 +1,6 @@
+env:
+  TERM: alacritty
+
 selection:
   semantics_escape_chars: ",|`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
@@ -21,10 +24,13 @@ mouse:
 window: 
   padding:
     x: 10
-    y: 10
+    Y: 10
+  title: Terminal
+  dynamic_title: true
+
 
 scrolling: 
-  history: 10000
+  history: 100000
   multiplier: 3
 
 font: 
@@ -210,3 +216,8 @@ bell:
   animation: EaseOutExpo
   duration: 300
   color: '0xffffff'
+
+
+
+live_config_reload: true
+alt_send_esc: false

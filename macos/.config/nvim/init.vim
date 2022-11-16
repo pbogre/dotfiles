@@ -56,7 +56,10 @@ call plug#begin("~/.vim/plugged")
 		let g:tex_conceal='adbmg'
   Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_dark='hard'
+
 	call plug#end()
+
+" Autocomplete
 
 " Colorscheme
 set termguicolors
