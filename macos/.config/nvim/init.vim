@@ -9,12 +9,8 @@ set hlsearch
 set incsearch
 
 " Indentation
-set tabstop=2
 set shiftwidth=2
-set softtabstop=2
-set expandtab
 set autoindent
-set smartindent
 set backspace=start,eol,indent
 filetype indent on
 
@@ -39,28 +35,42 @@ set nobackup
 set nowritebackup
 set shortmess+=c
 
+" Complete Pairs
+inoremap " ""<left>
+inoremap "" ""
+inoremap ' ''<left>
+inoremap '' ''
+inoremap ( ()<left>
+inoremap () ()
+inoremap [ []<left>
+inoremap [] []
+inoremap { {}<left>
+inoremap {} {}
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
 " Plugins
 filetype plugin on
 call plug#begin("~/.vim/plugged")
-	Plug 'sirver/ultisnips'
-		let g:UltiSnipsExpandTrigger = '<tab>'
-		let g:UltiSnipsJumpForwardTrigger = '<tab>'
-		let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+  Plug 'sirver/ultisnips'
+    let g:UltiSnipsExpandTrigger = '<tab>'
+    let g:UltiSnipsJumpForwardTrigger = '<tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
     let g:UltiSnipsSnippetDirectories=["snips"]
-	Plug 'lervag/vimtex'
-		let g:tex_flavor='latex'
-		let g:vimtex_view_method='skim'
-		let g:vimtex_view_skim_sync=1
-		let g:vimtex_view_skim_activate=1
-		let g:vimtex_quickfix_mode=0
-		set conceallevel=1
-		let g:tex_conceal='adbmg'
+  Plug 'lervag/vimtex'
+    let g:tex_flavor='latex'
+    let g:vimtex_view_method='skim'
+    let g:vimtex_view_skim_sync=1
+    let g:vimtex_view_skim_activate=1
+    let g:vimtex_quickfix_mode=0
+    set conceallevel=1
+    let g:tex_conceal='adbmg'
   Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_dark='hard'
-
-	call plug#end()
+call plug#end()
 
 " Autocomplete
+
 
 " Colorscheme
 set termguicolors
