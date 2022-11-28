@@ -67,10 +67,12 @@ call plug#begin("~/.vim/plugged")
     let g:tex_conceal='adbmg'
   Plug 'morhetz/gruvbox'
     let g:gruvbox_contrast_dark='hard'
+  Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 " Autocomplete
-
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Colorscheme
 set termguicolors
