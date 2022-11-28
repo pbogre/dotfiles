@@ -1,6 +1,16 @@
 ## Dependencies
-- [vim-plug](https://github.com/junegunn/vim-plug) (Remember to run `:PlugInstall`)
-- [neovim](https://neovim.io/)
-- [oh-my-zsh](https://ohmyz.sh/) (Location: `.config/zsh/`)
 - [homebrew](https://brew.sh/)
+- [oh-my-zsh](https://ohmyz.sh/) (Location: `.config/zsh/`)
 - [alacritty](https://alacritty.org/)
+- [neovim](https://neovim.io/)
+  - [vim-plug](https://github.com/junegunn/vim-plug) (Remember to run `:PlugInstall`)
+  - [yarn](https://yarnpkg.com/) (Used for Coc)
+  - [Language Servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers)  
+    - `:CocInstall coc-json coc-pyright coc-markdownlint coc-clangd coc-cmake`
+    - Includes:
+      - JSON
+      - Python 3
+      - Markdow
+      - CLang
+      - CMake
+      - Haskell (TODO)
