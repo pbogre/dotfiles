@@ -1,4 +1,5 @@
 ## Dependencies
+
 - [homebrew](https://brew.sh/)
 - [oh-my-zsh](https://ohmyz.sh/) (Location: `.config/zsh/`)
 - [alacritty](https://alacritty.org/)
@@ -14,3 +15,7 @@
       - CLang
       - CMake
       - Haskell (TODO)
+
+## Installing Packages
+- Casks: `brew install --cask alacritty cyberduck discord disk-inventory-x gimp keepassxc librewolf mactex-no-gui microsoft-word microsoft-powerpoint microsoft-teams notion skim spotify steam transmission visual-studio-code whatsapp`
+- Formulae: `brew install gnuplot yarn neovim node python@3.10`
