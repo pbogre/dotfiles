@@ -1,4 +1,0 @@
-mkdir ~/.zsh/
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/zsh/completion.zsh > ~/.zsh/completion.zsh
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/zsh/zshrc > ~/.zshrc
-source ~/.zshrc

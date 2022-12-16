@@ -1,8 +1,0 @@
-#! /bin/bash
-
-# Compositing Manager 
-xcompmgr -c &
-
-# Start
-~/.scripts/dwm/menubar
-~/.scripts/dwm/start
