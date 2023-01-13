@@ -3,3 +3,4 @@ gtk-2.0
 .zcompdump*
 .zsh_history
 .zsh_sessions
+*.log

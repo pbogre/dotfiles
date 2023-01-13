@@ -2,6 +2,7 @@
 set ignorecase
 set nowrap
 set encoding=utf-8
+set conceallevel=1
 
 " Search Highlight
 set showmatch
@@ -18,7 +19,6 @@ filetype indent on
 set number relativenumber
 set ruler
 set cursorline cursorlineopt=number
-
 
 " Show Syntax
 syntax on
@@ -65,10 +65,9 @@ call plug#begin("~/.vim/plugged")
     let g:vimtex_view_skim_sync=1
     let g:vimtex_view_skim_activate=1
     let g:vimtex_quickfix_mode=0
-    set conceallevel=1
     let g:tex_conceal='adbmg'
   Plug 'morhetz/gruvbox'
-    let g:gruvbox_contrast_dark='hard'
+    let g:gruvbox_contrast_dark='soft'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
@@ -82,7 +81,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 " Telescope
 nnoremap ff <cmd>Telescope find_files <cr>
-nnoremap fc <cmd>Telescope git_commits <cr>
+nnoremap fg <cmd>Telescope grep_string <cr>
 nnoremap fs <cmd>Telescope git_status <cr>
 
 " Colorscheme

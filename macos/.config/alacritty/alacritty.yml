@@ -209,7 +209,7 @@ schemes:
       cyan: '0x86c1b9'
       white: '0xf8f8f8'
 
-colors: *gruvbox_material_hard_dark
+colors: *gruvbox_material_medium_dark
 
 
 bell:
