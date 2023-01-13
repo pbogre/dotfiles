@@ -16,3 +16,4 @@ compinit -d ~/.config/zsh/.zcompdump
 # environment 
 source $ZSH/oh-my-zsh.sh
 eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin"
