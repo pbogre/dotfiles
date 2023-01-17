@@ -1,0 +1,88 @@
+# !/bin/bash
+
+# hush login
+touch ~/.hushlogin
+
+
+# homebrew install
+echo "\033[92m --~=* Installing homebrew *=~--\033[37m"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval $(/opt/homebrew/bin/brew shellenv)
+brew doctor
+brew update
+
+
+# setup necessary directories
+mkdir -p ~/.config
+mkdir -p ~/.config/zsh
+mkdir -p ~/.config/git 
+mkdir -p ~/.config/nvim/autoload
+mkdir -p ~/.config/nvim/snips
+
+
+# create symlinks
+echo "\033[92m --~=* Creating symlinks *=~--\033[37m"
+SYMLINKS=()
+ln -sf ~/dotfiles/macos/nvim/init.vim ~/.config/nvim/init.vim
+SYMLINKS+=('init.vim (nvim)')
+ln -sf ~/dotfiles/macos/nvim/snips/tex.snippets ~/.config/nvim/snips/tex.snippets
+SYMLINKS+=('\ntex.snippets (nvim)')
+ln -sf ~/dotfiles/macos/alacritty ~/.config/alacritty
+SYMLINKS+=('\nalacritty')
+ln -sf ~/dotfiles/macos/btop ~/.config/btop
+SYMLINKS+=('\nbtop')
+ln -sf ~/dotfiles/macos/git/gitconfig ~/.gitconfig
+SYMLINKS+=('\n.gitconfig (git)')
+ln -sf ~/dotfiles/macos/git/ignore-global ~/.config/git/ignore-global
+SYMLINKS+=('\nignore-global (git)')
+ln -sf ~/dotfiles/macos/neofetch ~/.config/neofetch
+SYMLINKS+=('\nneofetch')
+ln -sf ~/dotfiles/macos/zsh/zshenv ~/.zshenv
+SYMLINKS+=('\n.zshenv (zsh)')
+ln -sf ~/dotfiles/macos/zsh/zshrc ~/.config/zsh/.zshrc
+SYMLINKS+=('\n.zshrc (zsh)')
+ln -sf ~/dotfiles/macos/Brewfile ~/Brewfile
+SYMLINKS+=('\nBrewfile')
+
+echo ${SYMLINKS[@]}
+
+
+# install brew packages
+echo "\033[92m --~=* Installing packages *=~--\033[37m"
+cd ~
+brew bundle
+cd dotfiles
+
+
+# oh-my-zsh install
+echo "\033[92m --~=* Installing oh-my-zsh *=~--\033[37m"
+if [ ! -f ~/.config/zsh/.oh-my-zsh/ ]; then
+  export ZSH=~/.config/zsh/.oh-my-zsh
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
+fi
+
+# remove default .zshrc from oh-my-zsh install
+if [ -f ~/.zshrc ]; then
+  rm ~/.zshrc
+fi
+
+
+# install vim-plug and plugins
+echo "\033[92m --~=* Installing Neovim Plugins  *=~--\033[37m"
+if [ ! -f ~/.config/nvim/autoload/plug.vim ]; then
+  sh -c 'curl -fsSLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+fi
+
+nvim +'PlugInstall --sync' +qa
+pip install neovim
+nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake'
+
+
+# zsh default shell
+echo "\033[92m --~=* Changing default shell to zsh *=~--\033[37m"
+chsh -s /bin/zsh
+
+
+# done
+echo "\n\033[92m --~=* Installation complete! *=~--\033[37m"
+echo "\033[93m (!) To apply all changes, restart your terminal.\033[37m\n"

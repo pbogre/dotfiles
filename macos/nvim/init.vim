@@ -37,7 +37,7 @@ set nobackup
 set nowritebackup
 set shortmess+=c
 
-" Complete Pairs
+" Remappings
 inoremap " ""<left>
 inoremap "" ""
 inoremap ' ''<left>
@@ -50,6 +50,9 @@ inoremap { {}<left>
 inoremap {} {}
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+nnoremap rs :%s@search@replace@gc
+nnoremap <C-n> <cmd>noh <CR> 
 
 " Plugins
 filetype plugin on
@@ -81,7 +84,8 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 
 " Telescope
 nnoremap ff <cmd>Telescope find_files <cr>
-nnoremap fg <cmd>Telescope grep_string <cr>
+nnoremap fg <cmd>Telescope live_grep <cr>
+nnoremap fb <cmd>Telescope buffers <cr>
 nnoremap fs <cmd>Telescope git_status <cr>
 
 " Colorscheme
