@@ -1,32 +1,31 @@
 # MacOS Dotfiles
 
-## Dependencies
+These are the dotfiles for my customized MacOS experience. Big focus around neovim and the gruvbox aesthetic. 
 
-- [homebrew](https://brew.sh/)
-- [oh-my-zsh](https://ohmyz.sh/) (Location: `.config/zsh/`)
-- [alacritty](https://alacritty.org/)
-- [neovim](https://neovim.io/)
-  - [vim-plug](https://github.com/junegunn/vim-plug) (Remember to run `:PlugInstall`)
-  - [yarn](https://yarnpkg.com/) (Required for CoC)
-  - `brew install ripgrep fd` (Required for Telescope)
-  - [Language Servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers)  
-    - `:CocInstall coc-json coc-pyright coc-markdownlint coc-clangd coc-cmake`
-    - Includes:
-      - JSON
-      - Python 3
-      - Markdow
-      - CLang
-      - CMake
-      - Haskell (TODO)
+## Install
+```sh
+cd ~                                         # important!
+git clone https://github.com/pbogre/dotfiles
+cd dotfiles/macos                            # also important
+chmod +x install
+./install  
+```
+Once the installation starts, almost everything will work on its own and the following content will be installed:
+- homebrew
+- all my homebrew packages (dependencies for nvim etc. but also applications like whatsapp, microsoft word, etc.)
+- oh-my-zsh
+- all my neovim plugins
 
-## Installing Packages
+User input is needed to exit the :CocInstall page, as if i do that in the script the downloads dont actually finish.
+To do this, simply type `:qa`.
 
-- Casks: `brew install --cask alacritty cyberduck discord disk-inventory-x gimp keepassxc librewolf mactex-no-gui microsoft-word microsoft-powerpoint microsoft-teams notion skim spotify steam transmission visual-studio-code whatsapp`
-- Formulae: `brew install gnuplot yarn neovim node python@3.10 btop`
+The last place user input is needed is at the end of the installation, 
+you must enter your password to change your default shell to zsh.
 
 ## To-Do
 
-- [x] Setup autocompletion with NeoVim
-- [x] Setup Telescope in NeoVim
+- [x] ~~Setup autocompletion with NeoVim~~
+- [x] ~~Setup Telescope in NeoVim~~
+- [X] ~~Install script~~
 - [ ] Setup GitSigns for NeoVim
 - [ ] Switch to a [Lua config](https://github.com/LunarVim/Neovim-from-scratch) for NeoVim.
