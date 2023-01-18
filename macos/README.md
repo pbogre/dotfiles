@@ -5,7 +5,7 @@ These are the dotfiles for my customized MacOS experience. Big focus around neov
 ## Install
 ```sh
 cd ~                                         # important!
-git clone https://github.com/pbogre/dotfiles
+git clone -b macos https://github.com/pbogre/dotfiles
 cd dotfiles/macos                            # also important
 chmod +x install
 ./install  
