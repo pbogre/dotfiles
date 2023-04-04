@@ -10,7 +10,6 @@ cask "notion"
 cask "spotify"
 cask "steam"
 cask "transmission"
-cask "whatsapp"
 caks "runelite" # :)
 
 # LaTeX / Markdown
