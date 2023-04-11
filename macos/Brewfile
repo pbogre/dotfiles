@@ -10,10 +10,11 @@ cask "notion"
 cask "spotify"
 cask "steam"
 cask "transmission"
-cask "whatsapp"
+caks "runelite" # :)
 
-# LaTeX
+# LaTeX / Markdown
 cask "mactex-no-gui"
+brew "marked"
 cask "skim"
 
 # office
@@ -22,7 +23,7 @@ cask "microsoft-powerpoint"
 cask "microsoft-excel"
 cask "microsoft-teams"
 
-# formulae
+# other formulae
 brew "gnuplot"
 brew "python@3.10"
 brew "btop"
