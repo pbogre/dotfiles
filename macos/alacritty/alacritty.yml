@@ -218,6 +218,5 @@ bell:
   color: '0xffffff'
 
 
-
 live_config_reload: true
 window.option_as_alt: true
