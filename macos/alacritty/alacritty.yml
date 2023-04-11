@@ -220,4 +220,4 @@ bell:
 
 
 live_config_reload: true
-alt_send_esc: false
+window.option_as_alt: true
