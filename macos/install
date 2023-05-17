@@ -27,6 +27,8 @@ ln -sf ~/dotfiles/macos/nvim/init.vim ~/.config/nvim/init.vim
 SYMLINKS+=('init.vim (nvim)')
 ln -sf ~/dotfiles/macos/nvim/snips/tex.snippets ~/.config/nvim/snips/tex.snippets
 SYMLINKS+=('\ntex.snippets (nvim)')
+ln -sf ~/dotfiles/macos/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+SYMLINKS+=('\ncoc-settings.json (nvim)')
 ln -sf ~/dotfiles/macos/alacritty ~/.config/alacritty
 SYMLINKS+=('\nalacritty')
 ln -sf ~/dotfiles/macos/btop ~/.config/btop
@@ -75,7 +77,7 @@ fi
 
 nvim +'PlugInstall --sync' +qa
 pip install neovim
-nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake'
+nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-json'
 
 
 # zsh default shell
