@@ -6,11 +6,11 @@ cask "disk-inventory-x"
 cask "gimp"
 cask "keepassxc"
 cask "librewolf"
-cask "notion"
 cask "spotify"
 cask "steam"
 cask "transmission"
-caks "runelite" # :)
+cask "runelite" # :)
+cask "jellyfin-media-player"
 
 # LaTeX / Markdown
 cask "mactex-no-gui"
@@ -25,7 +25,7 @@ cask "microsoft-teams"
 
 # other formulae
 brew "gnuplot"
-brew "python@3.10"
+brew "python@3.11"
 brew "btop"
 brew "neofetch"
 
