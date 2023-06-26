@@ -5,3 +5,5 @@
 	name = Pietro Bonaldo
 [core]
 	excludesfile = /Users/pietro/.config/git/ignore-global
+[credential]
+	helper = store
