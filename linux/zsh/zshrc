@@ -1,6 +1,17 @@
-source ~/.zsh/completion.zsh
-PROMPT="%F{red}%n%f[%F{magenta}%2~%f] > "
+export ZSH="$HOME/.config/zsh/.oh-my-zsh"
 
-if [[ -z $DISPLAY ]]; then
-  startx
-fi
+alias vim="nvim"
+
+ZSH_THEME="nanotech"
+plugins=(
+	git
+)
+
+DISABLE_AUTO_TITLE="true"
+
+# move .zcompdump files
+autoload -Uz compinit
+compinit -d ~/.config/zsh/.zcompdump
+
+# environment 
+source $ZSH/oh-my-zsh.sh

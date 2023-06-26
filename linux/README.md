@@ -1,34 +1,37 @@
-# Arch Linux Dotfiles
+# Linux Dotfiles
 
-## Instructions
+![Showcase](images/showcase.png)
+
+These are the dotfiles for my customized Linux experience.
+As opposed to my MacOS dotfiles, this rice focuses on the
+everforest aesthetic with a lightweight typewriter font.
+
+## Install
+
+**Note**: The install script assumes uses `yay` to install packages,
+so if you are on an arch-based distro you need to have that and if
+you aren't you need to install the packages manually.
+
 ```sh
-# dwm
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/dwm/README
-# st
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/README
-# scripts
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/scripts/README
-# zsh
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/zsh/README
-# nano
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/nano/README
+cd ~
+git clone -b linux https://github.com/pbogre/dotfiles
+cd dotfiles/linux
+chmod +x install
+./install  
 ```
 
+Once the installation starts, almost everything will work on its own and the
+following content will be installed:
 
-## Packages
-### Style
-- ttf-firamono (font)
-- [wallpaper](https://wallpapercave.com/wp/1YsbfIX.jpg)
-### Window Manager
-- dwm (window manager)
-- st (terminal emulator)
-### Audio
-- pulseaudio (audio)
-- alsa-utils (audio)
-### Display
-- xcompmgr (composite manager)
-- xorg (display server)
-- xorg-xinit (display server)
-### Applications
-- keepassxc (password manager)
-- firefox (web browser)
+- various dependencies for the rice like polybar and rofi
+- some basic applications like firefox and discord
+- oh-my-zsh
+- all my neovim plugins
+
+User input is needed to exit the :CocInstall page, as if i do that in the script
+the downloads dont actually finish.
+To do this, simply type `:qa`.
+
+User input is also needed for sudo permission to enable the `light` program
+to run without sudo in the future, and at the end of the installation
+you must enter your password to change your default shell to zsh.

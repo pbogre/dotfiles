@@ -1,0 +1,61 @@
+configuration {
+	modi:	"drun";
+	font:	"JetBrains Mono 10";
+	sidebar-mode: true;
+}
+
+@theme "/dev/null"
+
+* {
+	bg: #141b1e;
+	fg: #dadada;
+	accent: #232a2d;
+	button: #232a2d;
+	background-color: @bg;
+	text-color:	@fg;
+}
+
+window {
+	border-radius: 10px;
+	width: 10%;
+	padding: 0px;
+}
+
+listview {
+    columns: 1;
+    lines: 5;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+}
+
+mainbox {
+    children: [ inputbar, listview ];
+    spacing: 2%;
+    padding: 2% 1% 2% 1%;
+}
+
+element {
+    orientation: vertical;
+    padding: 2% 0% 2% 0%;
+}
+
+element-icon {
+    size: 48px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    expand: true;
+}
+
+element-text {
+	background-color: inherit;
+	text-color:	inherit;
+}
+
+element selected {
+    background-color: @button;
+    border-radius: 6px;
+}
+
