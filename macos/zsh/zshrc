@@ -1,0 +1,19 @@
+export ZSH="$HOME/.config/zsh/.oh-my-zsh"
+
+alias vim="nvim"
+
+ZSH_THEME="nanotech"
+plugins=(
+	git
+)
+
+DISABLE_AUTO_TITLE="true"
+
+# move .zcompdump files
+autoload -Uz compinit
+compinit -d ~/.config/zsh/.zcompdump
+
+# environment 
+source $ZSH/oh-my-zsh.sh
+eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin"

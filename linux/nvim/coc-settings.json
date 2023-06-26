@@ -1,8 +1,14 @@
 {
   "diagnostic.virtualText": true,
+<<<<<<< HEAD:linux/nvim/coc-settings.json
   "diagnostic.virtualTextCurrentLineOnly": false,
 
   "clangd.arguments": [
     "--header-insertion=never"
   ]
 }
+=======
+  "diagnostic.virtualTextCurrentLineOnly": false
+}
+
+>>>>>>> 25c05d2 (Added coc-settings.json):macos/nvim/coc-settings.json

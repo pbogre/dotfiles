@@ -1,0 +1,223 @@
+env:
+  TERM: alacritty
+
+selection:
+  semantics_escape_chars: ",|`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+
+key_bindings:
+  - { key: LBracket,    mods: Alt|Shift,      chars: "\x7B"              }
+  - { key: RBracket,    mods: Alt|Shift,      chars: "\x7D"              }
+  - { key: LBracket,    mods: Alt,            chars: "\x5B"              }
+  - { key: RBracket,    mods: Alt,            chars: "\x5D"              }
+  - { key: Semicolon,   mods: Alt,            chars: "\x40"              }
+  - { key: Apostrophe,  mods: Alt,            chars: "\x23"              }
+  - { key: Caret,       mods: Alt,            chars: "\x60"              }
+  - { key: Key5,        mods: Alt,            chars: "\x7E"              }
+
+mouse:
+  hints:
+    launcher:
+      program: open
+    modifiers: Command
+
+window: 
+  padding:
+    x: 10
+    Y: 10
+  title: Terminal
+  dynamic_title: true
+
+
+scrolling: 
+  history: 100000
+  multiplier: 3
+
+font: 
+  normal:
+    family: JetBrains Mono
+    style: Medium
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  italic:
+    family: JetBrains Mono
+    style: Italic
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
+  size: 14.0
+  AppleFontSmoothing: true
+draw_bold_text_with_bright_colors: true
+
+schemes:
+  gruvbox_material_hard_dark: &gruvbox_material_hard_dark
+    primary:
+      background: '0x1d2021'
+      foreground: '0xd4be98'
+    normal:
+      black:   '0x32302f'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+    bright:
+      black:   '0x32302f'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+  gruvbox_material_medium_dark: &gruvbox_material_medium_dark
+    primary:
+      background: '0x282828'
+      foreground: '0xd4be98'
+    normal:
+      black:   '0x3c3836'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+    bright:
+      black:   '0x3c3836'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+  gruvbox_material_soft_dark: &gruvbox_material_soft_dark
+    primary:
+      background: '0x32302f'
+      foreground: '0xd4be98'
+    normal:
+      black:   '0x45403d'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+    bright:
+      black:   '0x45403d'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+  gruvbox_material_hard_light: &gruvbox_material_hard_light
+    primary:
+      background: '0xf9f5d7'
+      foreground: '0x654735'
+    normal:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xf2e5bc'
+    bright:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xf2e5bc'
+  gruvbox_material_medium_light: &gruvbox_material_medium_light
+    primary:
+      background: '0xfbf1c7'
+      foreground: '0x654735'
+    normal:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xeee0b7'
+    bright:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xeee0b7'
+  gruvbox_material_soft_light: &gruvbox_material_soft_light
+    primary:
+      background: '0xf2e5bc'
+      foreground: '0x654735'
+    normal:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xe6d5ae'
+    bright:
+      black:   '0x654735'
+      red:     '0xc14a4a'
+      green:   '0x6c782e'
+      yellow:  '0xb47109'
+      blue:    '0x45707a'
+      magenta: '0x945e80'
+      cyan:    '0x4c7a5d'
+      white:   '0xe6d5ae'
+  base-256-dark: &base-256-dark
+    primary:
+      background: '0x181818'
+      foreground: '0xd8d8d8'
+    cursor:
+      text: '0x181818'
+      cursor: '0xd8d8d8'
+    normal:
+      black: '0x181818'
+      red: '0xab4642'
+      green: '0xa1b56c'
+      yellow: '0xf7ca88'
+      blue: '0x7cafc2'
+      magenta: '0xba8baf'
+      cyan: '0x86c1b9'
+      white: '0xd8d8d8'
+    bright:
+      black: '0x585858'
+      red: '0xab4642'
+      green: '0xa1b56c'
+      yellow: '0xf7ca88'
+      blue: '0x7cafc2'
+      magenta: '0xba8baf'
+      cyan: '0x86c1b9'
+      white: '0xf8f8f8'
+
+colors: *gruvbox_material_medium_dark
+
+
+bell:
+  animation: EaseOutExpo
+  duration: 300
+  color: '0xffffff'
+
+
+
+live_config_reload: true
+alt_send_esc: false
