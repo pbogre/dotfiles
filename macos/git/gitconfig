@@ -1,7 +1,0 @@
-[init]
-	defaultBranch = main
-[user]
-	email = pietro.bogre@gmail.com
-	name = Pietro Bonaldo
-[core]
-	excludesfile = /Users/pietro/.config/git/ignore-global

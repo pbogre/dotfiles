@@ -1,7 +1,0 @@
-git clone git://git.suckless.org/st
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/config.def.h > st/config.def.h
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/config.mk > st/config.mk
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/st.h > st/st.h
-curl https://raw.githubusercontent.com/05e/dotfiles/main/arch/st/x.c > st/x.c
-cd st
-sudo make clean install
