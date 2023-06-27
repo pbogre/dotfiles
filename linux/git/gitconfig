@@ -2,8 +2,8 @@
 	defaultBranch = main
 [user]
 	email = pietro.bogre@gmail.com
-	name = Pietro Bonaldo
+	name = Pietro Bonaldo Gregori
 [core]
 	excludesfile = /Users/pietro/.config/git/ignore-global
 [credential]
-	helper = cache
+	helper = store
