@@ -24,7 +24,7 @@ mouse:
 window: 
   padding:
     x: 10
-    Y: 10
+    y: 10
   title: Terminal
   dynamic_title: true
 
@@ -220,4 +220,4 @@ bell:
 
 
 live_config_reload: true
-alt_send_esc: false
+window.option_as_alt: true
