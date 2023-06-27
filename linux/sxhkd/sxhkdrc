@@ -35,7 +35,7 @@ super + Escape
      ~/.config/bspwm/scripts/i3lock.sh
 
 # restart sxhkd
-super + shift + Escape
+super + alt + Escape
 	pkill -USR1 -x sxhkd
 
 #
@@ -187,7 +187,7 @@ super + Print
 
 # launch firefox
 super + z 
-  firefox
+  bspc desktop --focus ^2; firefox
 
 # launch thunar
 super + n 
@@ -195,4 +195,4 @@ super + n
 
 # launch alacritty
 super + Return
-	alacritty
+  bspc desktop --focus ^1; alacritty
