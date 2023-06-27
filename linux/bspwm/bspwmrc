@@ -45,7 +45,7 @@ picom -b &
 # Network Applet
 nm-applet --indicator &
 # Automatically lock after some time
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i ~/.config/bspwm/assets/wallpaper_1920x1080.png
+xss-lock --transfer-sleep-lock -- i3lock -i ~/.config/bspwm/assets/wallpaper_1920x1080.png &
 
 # Cursor
 xsetroot -cursor_name left_ptr &
