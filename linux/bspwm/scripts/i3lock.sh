@@ -2,9 +2,9 @@
 
 BLUR="8x8"
 
-PICTURE=/tmp/lock.png
+PICTURE=/tmp/i3lockimg.png
 scrot $PICTURE
 convert $PICTURE -blur $BLUR $PICTURE
 
-i3lock -i $PICTURE 
+i3lock -i $PICTURE
 rm $PICTURE

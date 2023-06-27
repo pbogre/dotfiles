@@ -14,8 +14,9 @@ bspc config gapless_monocle      true
 bspc config pointer_follows_focus true
 bspc config focus_follows_pointer true
 
-bspc rule -a firefox desktop='^2'
 bspc rule -a alacritty desktop='^1'
+bspc rule -a firefox desktop='^2'
+bspc rule -a discord desktop='^3'
 bspc rule -a galculator state=floating
 bspc rule -a thunar state=floating
 
@@ -36,13 +37,15 @@ sh ~/.screenlayout/monitor.sh &
 # Polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Wallpaper
-feh --bg-fill ~/.config/bspwm/assets/wallpaper.jpg &
+feh --bg-fill ~/.config/bspwm/assets/wallpaper_3840x2160.png &
 # Dex
 dex -a -s /etc/xdg/autostart/:~/.config/autostart/  &
 # Picom
 picom -b &
 # Network Applet
-#nm-applet --indicator &
+nm-applet --indicator &
+# Automatically lock after some time
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -i ~/.config/bspwm/assets/wallpaper_1920x1080.png
 
 # Cursor
 xsetroot -cursor_name left_ptr &

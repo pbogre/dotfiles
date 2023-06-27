@@ -5,12 +5,12 @@ touch ~/.hushlogin
 
 # install dependencies
 echo -e "\033[92m --=* Installing dependencies *=--\033[37m"
-yay -S alacritty discord firefox keepass syncthing
-yay -S bspwm picom polybar sxhkd i3lock
-yay -S light
-yay -S ttf-font-awesome ttf-cmu-typewriter ttf-jetbrains-mono ttf-twemoji
-yay -S neofetch btop
-yay -S yarn python python-neovim nodejs fd ripgrep
+yay -S alacritty discord firefox keepass syncthing \
+       bspwm picom polybar sxhkd i3lock ranger \
+       light xss-lock \
+       ttf-font-awesome ttf-cmu-typewriter ttf-jetbrains-mono ttf-twemoji \
+       neofetch btop \
+       yarn python python-neovim nodejs fd ripgrep
 
 # extra dependency setup
 yarn add neovim
@@ -20,6 +20,8 @@ sudo chmod +s /usr/bin/light
 echo -e "\033[92m --=* Creating config directories *=--\033[37m"
 mkdir -p ~/.config/zsh
 mkdir -p ~/.config/git 
+mkdir -p ~/.config/alacritty
+mkdir .p ~/.config/neofetch
 mkdir -p ~/.config/nvim/autoload
 mkdir -p ~/.config/nvim/snips
 
@@ -32,13 +34,13 @@ ln -sf ~/dotfiles/linux/nvim/snips/tex.snippets ~/.config/nvim/snips/tex.snippet
 SYMLINKS+=('\ntex.snippets (nvim)')
 ln -sf ~/dotfiles/linux/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 SYMLINKS+=('\ncoc-settings.json (nvim)')
-ln -sf ~/dotfiles/linux/alacritty ~/.config/alacritty
+ln -sf ~/dotfiles/linux/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 SYMLINKS+=('\nalacritty')
 ln -sf ~/dotfiles/linux/git/gitconfig ~/.gitconfig
 SYMLINKS+=('\n.gitconfig (git)')
 ln -sf ~/dotfiles/linux/git/ignore-global ~/.config/git/ignore-global
 SYMLINKS+=('\nignore-global (git)')
-ln -sf ~/dotfiles/linux/neofetch ~/.config/neofetch
+ln -sf ~/dotfiles/linux/neofetch/config.conf ~/.config/neofetch/config.conf
 SYMLINKS+=('\nneofetch')
 ln -sf ~/dotfiles/linux/zsh/zshenv ~/.zshenv
 SYMLINKS+=('\n.zshenv (zsh)')
@@ -72,6 +74,10 @@ nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-json'
 # zsh default shell
 echo -e "\033[92m --~=* Changing default shell to zsh *=~--\033[37m"
 chsh -s /bin/zsh
+
+# cleanup
+echo -e "\033[92m --~=* Cleanup *=~--\033[37m"
+rm -rf node_modules yarn.lock package.json
 
 # done
 echo -e "\n\033[92m --~=* Installation complete! *=~--\033[37m"
