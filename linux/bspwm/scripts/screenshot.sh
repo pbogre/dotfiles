@@ -1,6 +1,13 @@
 #!/bin/bash
 
-file="$(xdg-user-dir PICTURES)/screenshot-$(date +%F_%T).png"
+picture_dir=$(xdg-user-dir PICTURES)
+
+if [ ! -d "$picture_dir/screenshots"];
+then
+  mkdir -p "$picture_dir/screenshots"
+fi
+
+file="$picture_dir/screenshots/screenshot-$(date +%F_%T).png"
 
 if [ "$1" = "screen" ]
 then
