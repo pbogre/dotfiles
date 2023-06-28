@@ -1,6 +1,6 @@
 # Linux Dotfiles
 
-![Showcase](images/showcase.png)
+![Showcase](IMAGES/showcase.png)
 
 These are the dotfiles for my customized Linux experience.
 As opposed to my MacOS dotfiles, this rice focuses on the
