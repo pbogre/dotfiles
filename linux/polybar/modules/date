@@ -1,0 +1,15 @@
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+;only display time by default
+date =
+time = %{T2} %H:%M%{T-}
+
+date-alt = %{T2} %d %B %Y%{T-}
+time-alt = %{T2} %H:%M:%S%{T-}
+
+label = %date%%time%
+label-font = 0
+label-foreground = ${colors.fg}

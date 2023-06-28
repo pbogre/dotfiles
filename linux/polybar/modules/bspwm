@@ -1,0 +1,32 @@
+[module/bspwm]
+type = internal/bspwm
+
+enable-scroll = false
+
+ws-icon-default = "%{T1} 🌲 %{T-}"
+;ws-icon-0 = "I;%{T1} 🌲 %{T-}"
+;ws-icon-1 = "II;%{T1} 🌲 %{T-}"
+;ws-icon-2 = "III;%{T1} 🌲 %{T-}"
+;ws-icon-3 = "IV;%{T1} 🌲 %{T-}"
+
+format = <label-state> <label-mode>
+
+label-dimmed-foreground = #555
+label-dimmed-underline = ${bar/top.background}
+label-dimmed-focused-background = #f00
+
+label-focused = %icon%
+label-focused-foreground = ${colors.bg}
+label-focused-background = ${colors.fg}
+label-focused-underline = #fba922
+
+label-occupied = %icon%
+label-occupied-padding = 0
+label-occupied-foreground = ${colors.fg}
+
+label-urgent = %icon%
+label-urgent-background = ${colors.red}
+
+label-empty = %icon%
+label-empty-foreground = #55
+label-empty-padding = 0

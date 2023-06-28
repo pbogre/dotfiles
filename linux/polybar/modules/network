@@ -1,0 +1,30 @@
+[module/network]
+type = internal/network
+
+interface = wlan0
+interface-type = wireless
+
+accumulate-stats = true
+unknown-as-up = true
+
+format-connected = <ramp-signal><label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = %{T2}%downspeed%%{T-}
+label-connected-background = ${colors.fg}
+label-connected-foreground = ${colors.bg}
+label-connected-padding-right = 1
+
+label-disconnected = %{T5}󰤭%{T-}
+label-disconnected-background = ${colors.red}
+label-disconnected-foreground = ${colors.bg}
+label-disconnected-padding-right = 1
+
+ramp-signal-0 = %{T5}󰤯 %{T-}
+ramp-signal-1 = %{T5}󰤟 %{T-}
+ramp-signal-2 = %{T5}󰤢 %{T-}
+ramp-signal-3 = %{T5}󰤥 %{T-}
+ramp-signal-4 = %{T5}󰤨 %{T-}
+ramp-signal-padding-left = 1
+ramp-signal-background = ${colors.fg}
+ramp-signal-foreground = ${colors.bg}

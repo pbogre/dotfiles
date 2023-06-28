@@ -1,0 +1,49 @@
+[module/battery]
+type = internal/battery
+
+full-at = 99
+low-at = 10
+
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 1
+
+format-charging = <ramp-capacity> <label-charging>
+format-charging-background = ${colors.cyan}
+format-charging-foreground = ${colors.bg}
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${colors.yellow}
+format-discharging-foreground = ${colors.bg}
+
+format-full = <ramp-capacity> <label-full>
+format-full-background = ${colors.green}
+format-full-foreground = ${colors.bg}
+
+format-low = <animation-low>
+format-low-background = ${colors.red}
+format-low-foreground = ${colors.bg}
+
+label-charging = %{T2}%percentage%%{T-}
+label-charging-padding-right = 1
+
+label-discharging = %{T2}%percentage%%{T-}
+label-discharging-padding-right = 1
+
+label-full = %{T2}Full!%{T-}
+label-full-padding-right = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-padding-left = 1
+
+animation-low-0 = 
+animation-low-0-padding-left = 15px
+animation-low-1 = 
+animation-low-1-padding-left = 1
+animation-low-framerate = 500
+animation-low-padding-right = 1

@@ -162,6 +162,22 @@ XF86AudioMute
   amixer -D pulse sset Master toggle-mute
 
 #
+# Music Control
+#
+
+# next song
+XF86AudioNext
+  playerctl next
+
+# previous song
+XF86AudioPrevious
+  playerctl previous
+
+# play/pause song
+XF86AudioPlay
+  playerctl play-pause
+
+#
 # Brightness Control
 #
   

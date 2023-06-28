@@ -1,0 +1,43 @@
+[module/music]
+type = custom/script
+tail = true
+interval = 1
+
+format = %{T2}<label>%{T-}
+label-padding-right = 1
+label-foreground = ${colors.bg}
+label-background = ${colors.fg}
+exec = ~/.config/polybar/scripts/scroll_music_status.sh
+
+[module/music-prev]
+type = custom/script
+
+interval = 1
+exec = if [[ -z $(playerctl -s -l) ]]; then echo ""; else echo "⏮ "; fi
+
+format = <label>
+label-padding-left = 1
+label-foreground = ${colors.bg}
+label-background = ${colors.fg}
+
+click-left = playerctl previous
+
+[module/music-play-pause]
+type = custom/script
+interval = 1
+exec = ~/.config/polybar/scripts/get_music_playing.sh
+
+format = <label>
+label-foreground = ${colors.bg}
+label-background = ${colors.fg}
+
+click-left = playerctl play-pause
+
+[module/music-next]
+type = custom/script
+interval = 1
+exec = if [[ -z $(playerctl -s -l) ]]; then echo ""; else echo "⏭ "; fi
+
+format = <label>
+label-foreground = ${colors.bg}
+label-background = ${colors.fg}
