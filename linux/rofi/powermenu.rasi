@@ -22,7 +22,7 @@ prompt {
 
 listview {
   columns: 1;
-  lines: 4;
+  lines: 5;
 }
 
 mainbox {
