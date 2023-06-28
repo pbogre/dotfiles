@@ -1,13 +1,18 @@
 # !/bin/bash
 
 # hush login
-touch ~/.hushlogin
+if [ ! -f ~/.hushlogin ];
+then
+  touch ~/.hushlogin
+fi
 
 # install dependencies
+# TODO: only do this if dependencies not already met
+# 	for now, can be skipped by manually aborting on prompt
 echo -e "\033[92m --=* Installing dependencies *=--\033[37m"
-yay -S alacritty discord firefox keepass syncthing spotify \
+yay -S alacritty discord firefox keepassxc syncthing spotify \
        bspwm picom polybar sxhkd i3lock ranger \
-       light xss-lock zscroll \
+       light xss-lock zscroll python-ueberzug \
        ttf-font-awesome ttf-cmu-typewriter ttf-jetbrains-mono ttf-twemoji ttf-jetbrains-mono-nerd \
        neofetch btop mpd \
        yarn python python-neovim nodejs fd ripgrep
@@ -17,65 +22,69 @@ yarn add neovim
 sudo chmod +s /usr/bin/light
 
 # setup necessary directories
-echo -e "\033[92m --=* Creating config directories *=--\033[37m"
 mkdir -p ~/.config/zsh
-mkdir -p ~/.config/git 
-mkdir -p ~/.config/alacritty
-mkdir .p ~/.config/neofetch
-mkdir -p ~/.config/nvim/autoload
-mkdir -p ~/.config/nvim/snips
 
 # create symlinks
 echo -e "\033[92m --~=* Creating symlinks *=~--\033[37m"
-SYMLINKS=()
-ln -sf ~/dotfiles/linux/nvim/init.vim ~/.config/nvim/init.vim
-SYMLINKS+=('init.vim (nvim)')
-ln -sf ~/dotfiles/linux/nvim/snips/tex.snippets ~/.config/nvim/snips/tex.snippets
-SYMLINKS+=('\ntex.snippets (nvim)')
-ln -sf ~/dotfiles/linux/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-SYMLINKS+=('\ncoc-settings.json (nvim)')
-ln -sf ~/dotfiles/linux/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-SYMLINKS+=('\nalacritty')
+dotfiles="~/dotfiles/linux"
+if [ -d "~/.config/nvim" ]; then ln -sf "$dotfiles/nvim" ~/.config/nvim; fi
+if [ -d "~/.config/alacritty" ]; then ln -sf "$dotfiles/alacritty" ~/.config/alacritty; fi
+if [ -d "~/.config/git" ]; then ln -sf "$dotfiles/git" ~/.config/git; fi
 ln -sf ~/dotfiles/linux/git/gitconfig ~/.gitconfig
-SYMLINKS+=('\n.gitconfig (git)')
-ln -sf ~/dotfiles/linux/git/ignore-global ~/.config/git/ignore-global
-SYMLINKS+=('\nignore-global (git)')
-ln -sf ~/dotfiles/linux/neofetch/config.conf ~/.config/neofetch/config.conf
-SYMLINKS+=('\nneofetch')
+if [ -d "~/.config/neofetch" ]; then ln -sf "$dotfiles/neofetch" ~/.config/neofetch; fi
 ln -sf ~/dotfiles/linux/zsh/zshenv ~/.zshenv
-SYMLINKS+=('\n.zshenv (zsh)')
 ln -sf ~/dotfiles/linux/zsh/zshrc ~/.config/zsh/.zshrc
-SYMLINKS+=('\n.zshrc (zsh)')
+if [ -d "~/.config/bspwm" ]; then ln -sf "$dotfiles/bspwm" ~/.config/bspwm; fi
+if [ -d "~/.config/polybar" ]; then ln -sf "$dotfiles/polybar" ~/.config/polybar; fi
+if [ -d "~/.config/sxhkd" ]; then ln -sf "$dotfiles/sxhkd" ~/.config/sxhkd; fi
+if [ -d "~/.config/rofi" ]; then ln -sf "$dotfiles/rofi" ~/.config/rofi; fi
+if [ -d "~/.config/ranger" ]; then ln -sf "$dotfiles/ranger" ~/.config/ranger; fi
 
-echo ${SYMLINKS[@]}
+# ranger scope.sh script download
+if [ ! -f ~/.config/ranger/scope.sh ];
+then
+  echo -e "\033[92m --~=* Installing ranger scope.sh script *=~--\033[37m"
+  wget -P ~/.config/ranger/ "https://raw.githubusercontent.com/ranger/ranger/1a007158cef1279df68d0e8567b126def6b68046/ranger/data/scope.sh"
+  chmod +x ~/.config/ranger/scope.sh
+fi
 
 # oh-my-zsh install
-echo -e "\033[92m --~=* Installing oh-my-zsh *=~--\033[37m"
-if [ ! -f ~/.config/zsh/.oh-my-zsh/ ]; then
+if [ ! -f ~/.config/zsh/.oh-my-zsh/ ];
+then
+  echo -e "\033[92m --~=* Installing oh-my-zsh *=~--\033[37m"
   export ZSH=~/.config/zsh/.oh-my-zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 fi
 
 # remove default .zshrc from oh-my-zsh install
-if [ -f ~/.zshrc ]; then
+if [ -f ~/.zshrc ];
+then
   rm ~/.zshrc
 fi
 
 # install vim-plug and plugins
-echo -e "\033[92m --~=* Installing Neovim Plugins  *=~--\033[37m"
-if [ ! -f ~/.config/nvim/autoload/plug.vim ]; then
+if [ ! -f ~/.config/nvim/autoload/plug.vim ];
+then
+  echo -e "\033[92m --~=* Installing Neovim Plugins  *=~--\033[37m"
   sh -c 'curl -fsSLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fi
 
 nvim +'PlugInstall --sync' +qa
-pip install neovim
-nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-json'
+
+# note: not really valid if user already has some coc packages but whatever
+if [ ! -f ~/.config/coc/extensions/package.json ];
+then
+  nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-json'
+fi
 
 # zsh default shell
-echo -e "\033[92m --~=* Changing default shell to zsh *=~--\033[37m"
-chsh -s /bin/zsh
+if [ "$SHELL" != "/bin/zsh" ];
+then
+  echo -e "\033[92m --~=* Changing default shell to zsh *=~--\033[37m"
+  chsh -s /bin/zsh
+fi
 
-# cleanup
+# cleanup - bit risky!
 echo -e "\033[92m --~=* Cleanup *=~--\033[37m"
 rm -rf node_modules yarn.lock package.json
 
