@@ -8,7 +8,7 @@ echo -e "\033[92m --=* Installing dependencies *=--\033[37m"
 yay -S alacritty discord firefox keepass syncthing \
        bspwm picom polybar sxhkd i3lock ranger \
        light xss-lock \
-       ttf-font-awesome ttf-cmu-typewriter ttf-jetbrains-mono ttf-twemoji \
+       ttf-font-awesome ttf-cmu-typewriter ttf-jetbrains-mono ttf-twemoji ttf-jetbrains-mono-nerd \
        neofetch btop mpd \
        yarn python python-neovim nodejs fd ripgrep
 
