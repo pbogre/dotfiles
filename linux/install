@@ -9,7 +9,7 @@ yay -S alacritty discord firefox keepass syncthing \
        bspwm picom polybar sxhkd i3lock ranger \
        light xss-lock \
        ttf-font-awesome ttf-cmu-typewriter ttf-jetbrains-mono ttf-twemoji \
-       neofetch btop \
+       neofetch btop mpd \
        yarn python python-neovim nodejs fd ripgrep
 
 # extra dependency setup
