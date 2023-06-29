@@ -10,9 +10,9 @@
 }
 
 window {
-  location: northwest;
+  location: northeast;
+  y-offset: 2.75em;
   width: 10%;
-  border: 0;
   padding: 0;
 }
 
