@@ -13,7 +13,7 @@ PLAYER="playerctld"
 # Format of the information displayed
 # Eg. {{ artist }} - {{ album }} - {{ title }}
 # See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
-FORMAT="{{ title }} - {{ artist }}"
+FORMAT="\"{{ title }}\" by {{ artist }}"
 
 update_hooks() {
     while IFS= read -r id
@@ -28,23 +28,23 @@ EXIT_CODE=$?
 if [ $EXIT_CODE -eq 0 ]; then
     STATUS=$PLAYERCTL_STATUS
 else
-    update_hooks "$PARENT_BAR_PID" 3
+    STATUS="No player is running"
 fi
 
 if [ "$1" == "--status" ]; then
     echo "$STATUS"
 else
     if [ "$STATUS" = "Stopped" ]; then
-	update_hooks "$PARENT_BAR_PID" 2
+	update_hooks "$PARENT_BAR_PID" 3
         echo "No music is playing"
     elif [ "$STATUS" = "Paused"  ]; then
-	update_hooks "$PARENT_BAR_PID" 2
+        update_hooks "$PARENT_BAR_PID" 2
         playerctl --player=$PLAYER metadata --format "$FORMAT"
-    elif [ "$STATUS" = "Playing"  ]; then
-	update_hooks "$PARENT_BAR_PID" 1
-        playerctl --player=$PLAYER metadata --format "$FORMAT"
-    else
+    elif [ "$STATUS" = "No player is running"  ]; then
+        echo ""
 	update_hooks "$PARENT_BAR_PID" 3
-        echo "$STATUS"
+    else
+        update_hooks "$PARENT_BAR_PID" 1
+        playerctl --player=$PLAYER metadata --format "$FORMAT"
     fi
 fi
