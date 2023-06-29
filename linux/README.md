@@ -8,9 +8,14 @@ everforest aesthetic with a lightweight typewriter font.
 
 ## Install
 
-**Note**: The install script assumes uses `yay` to install packages,
+**Note 1**: The install script assumes uses `yay` to install packages,
 so if you are on an arch-based distro you need to have that and if
 you aren't you need to install the packages manually.
+
+**Note 2**: If you already have config folders in `~/.config/` like 
+bspwm, ranger, polybar, etc. the install script will not link the new
+folders, so you should either delete or backup elsewhere you existing 
+configuration, or simply import the settings that you want manually.
 
 ```sh
 cd ~
