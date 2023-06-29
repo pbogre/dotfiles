@@ -5,3 +5,4 @@ gtk-2.0
 .zsh_history
 .zsh_sessions
 *.log
+scope.sh
