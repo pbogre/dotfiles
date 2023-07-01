@@ -170,7 +170,7 @@ XF86AudioNext
   playerctl next
 
 # previous song
-XF86AudioPrevious
+XF86AudioPrev
   playerctl previous
 
 # play/pause song
