@@ -1,14 +1,6 @@
 @theme "/dev/null"
 @import "config.rasi"
 
-* {
-  bg: #f3ead3;
-  fg: #5c6a72;
-  active: #a7c080;
-  background-color: @bg;
-  text-color:	@fg;
-}
-
 window {
   location: northeast;
   y-offset: 2.75em;

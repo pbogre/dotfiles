@@ -12,7 +12,7 @@ configuration {
 * {
   bg: #f3ead3;
   fg: #5c6a72;
-  active: #a7c080;
+  active: #8da101;
   background-color: @bg;
   text-color:	@fg;
 }
