@@ -70,7 +70,9 @@ call plug#begin("~/.vim/plugged")
     let g:vimtex_quickfix_mode=0
     let g:tex_conceal='adbmg'
   Plug 'morhetz/gruvbox'
-    let g:gruvbox_contrast_dark='soft'
+    let g:gruvbox_contrast_dark='soft'  
+  Plug 'sainnhe/everforest'
+    let g:everforest_contrast_light='soft'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
@@ -90,4 +92,4 @@ nnoremap fs <cmd>Telescope git_status <cr>
 
 " Colorscheme
 set termguicolors
-colorscheme gruvbox
+colorscheme everforest
