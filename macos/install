@@ -75,7 +75,7 @@ fi
 
 nvim +'PlugInstall --sync' +qa
 pip install neovim
-nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-java'
+nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-java coc-json'
 
 
 # zsh default shell
