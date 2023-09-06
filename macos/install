@@ -3,7 +3,6 @@
 # hush login
 touch ~/.hushlogin
 
-
 # homebrew install
 echo "\033[92m --~=* Installing homebrew *=~--\033[37m"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -11,22 +10,16 @@ eval $(/opt/homebrew/bin/brew shellenv)
 brew doctor
 brew update
 
-
 # setup necessary directories
 mkdir -p ~/.config
 mkdir -p ~/.config/zsh
 mkdir -p ~/.config/git 
-mkdir -p ~/.config/nvim/autoload
-mkdir -p ~/.config/nvim/snips
-
 
 # create symlinks
 echo "\033[92m --~=* Creating symlinks *=~--\033[37m"
 SYMLINKS=()
-ln -sf ~/dotfiles/macos/nvim/init.vim ~/.config/nvim/init.vim
-SYMLINKS+=('init.vim (nvim)')
-ln -sf ~/dotfiles/macos/nvim/snips/tex.snippets ~/.config/nvim/snips/tex.snippets
-SYMLINKS+=('\ntex.snippets (nvim)')
+ln -sf ~/dotfiles/macos/nvim ~/.config/nvim
+SYMLINKS+=('nvim')
 ln -sf ~/dotfiles/macos/alacritty ~/.config/alacritty
 SYMLINKS+=('\nalacritty')
 ln -sf ~/dotfiles/macos/btop ~/.config/btop
@@ -46,13 +39,11 @@ SYMLINKS+=('\nBrewfile')
 
 echo ${SYMLINKS[@]}
 
-
 # install brew packages
 echo "\033[92m --~=* Installing packages *=~--\033[37m"
 cd ~
 brew bundle
 cd dotfiles
-
 
 # oh-my-zsh install
 echo "\033[92m --~=* Installing oh-my-zsh *=~--\033[37m"
@@ -66,14 +57,14 @@ if [ -f ~/.zshrc ]; then
   rm ~/.zshrc
 fi
 
-
-# install vim-plug and plugins
+# install packer and plugins
+# this hasn't been tested lol
 echo "\033[92m --~=* Installing Neovim Plugins  *=~--\033[37m"
-if [ ! -f ~/.config/nvim/autoload/plug.vim ]; then
-  sh -c 'curl -fsSLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if [ ! -f ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]; then
+  sh -c 'git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim'
 fi
 
-nvim +'PlugInstall --sync' +qa
+nvim +'PackerInstall' +qa
 pip install neovim
 nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-java coc-json'
 
