@@ -10,9 +10,9 @@ vim.o.hlsearch  = true
 vim.o.incsearch = true
 
 -- Indentation
-vim.o.shiftwidth = 2
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 vim.o.autoindent = true
-vim.o.backspace  = 'start,eol,indent'
 vim.cmd("filetype indent on")
 
 -- Line Numbers
@@ -56,7 +56,7 @@ vim.cmd("filetype plugin on")
 
 -- Autocomplete
 local coc_options = { silent = true, noremap = true, expr = true, replace_keycodes = false }
-vim.keymap.set("i", "<TAB>",   'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', coc_options)
+vim.keymap.set("i", "<TAB>",   'coc#pum#visible() ? coc#pum#next(1) : "<TAB>"', coc_options)
 vim.keymap.set("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], coc_options)
 vim.keymap.set("i", "<cr>",    [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], coc_options)
 
@@ -71,6 +71,7 @@ require('gitsigns').setup({
     untracked    = { text = "|" },
   },
 })
+vim.keymap.set("n", "gp", ":Gitsigns preview_hunk<CR>", options)
 
 -- Telescope
 vim.keymap.set("n", "ff", ":Telescope find_files<CR>", options)
