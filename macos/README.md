@@ -21,11 +21,3 @@ To do this, simply type `:qa`.
 
 The last place user input is needed is at the end of the installation, 
 you must enter your password to change your default shell to zsh.
-
-## To-Do
-
-- [x] ~~Setup autocompletion with NeoVim~~
-- [x] ~~Setup Telescope in NeoVim~~
-- [X] ~~Install script~~
-- [ ] Setup GitSigns for NeoVim
-- [ ] Switch to a [Lua config](https://github.com/LunarVim/Neovim-from-scratch) for NeoVim.
