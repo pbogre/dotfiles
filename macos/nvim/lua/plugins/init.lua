@@ -3,7 +3,7 @@ return require("packer").startup(function(use)
   use "sainnhe/everforest"
   use "lewis6991/gitsigns.nvim"
   use "lervag/vimtex"
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use {'neoclide/coc.nvim', branch = "release"}
   use{
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2",
