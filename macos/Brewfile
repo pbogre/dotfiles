@@ -8,6 +8,7 @@ cask "librewolf"
 cask "spotify"
 cask "steam"
 cask "transmission"
+cask "jellyfin-media-player"
 
 # LaTeX
 cask "mactex-no-gui"
