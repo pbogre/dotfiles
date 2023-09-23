@@ -48,7 +48,7 @@ vim.keymap.set("i", "{",     "{}<left>",     options)
 vim.keymap.set("i", "{}",    "{}",           options)
 vim.keymap.set("i", "{<CR>", "{<CR>}<ESC>O", options)
 -- Normal Mode
-vim.keymap.set("n", "res",    ":%s@search@replace@gc", options)
+vim.keymap.set("n", "fr",    ":%s@search@replace@gc",  options)
 vim.keymap.set("n", "<C-h>", "<cmd>:let @/ = \"\"<CR>",options)
 
 -- Colorscheme
