@@ -1,16 +1,13 @@
 # everyday
 cask "alacritty"
-cask "cyberduck"
 cask "discord"
 cask "disk-inventory-x"
 cask "gimp"
 cask "keepassxc"
 cask "librewolf"
-cask "notion"
 cask "spotify"
 cask "steam"
 cask "transmission"
-cask "whatsapp"
 
 # LaTeX
 cask "mactex-no-gui"
