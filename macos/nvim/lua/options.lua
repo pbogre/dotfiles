@@ -1,3 +1,6 @@
+-- Python path
+vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
+
 -- Misc
 vim.o.ignorecase   = true
 vim.wo.wrap        = false
