@@ -1,0 +1,54 @@
+live_config_reload = true
+
+[bell]
+animation = "EaseOutExpo"
+color = "0xffffff"
+duration = 300
+
+[font]
+normal = { family = "monospace", style="Regular" }
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#5c6a72"
+blue = "#3a94c5"
+cyan = "#35a77c"
+green = "#8da101"
+magenta = "#df69ba"
+red = "#f85552"
+white = "#fdf6e3"
+yellow = "#dfa000"
+
+[colors.normal]
+black = "#5c6a72"
+blue = "#3a94c5"
+cyan = "#35a77c"
+green = "#8da101"
+magenta = "#df69ba"
+red = "#f85552"
+white = "#fdf6e3"
+yellow = "#dfa000"
+
+[colors.primary]
+background = "#fdf6e3"
+foreground = "#5c6a72"
+
+[env]
+TERM = "alacritty"
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[window]
+dynamic_title = true
+title = "Terminal"
+
+[window.padding]
+x = 10
+y = 10
