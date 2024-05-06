@@ -18,9 +18,3 @@ source $ZSH/oh-my-zsh.sh
 eval $(/opt/homebrew/bin/brew shellenv)
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:$HOME/.cargo/bin"
 export CPATH="${CPATH}:/opt/homebrew/include:/opt/homebrew/lib"
-
-# history settings
-export HISTFILE="~/.config/zsh/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
-setopt appendhistory
