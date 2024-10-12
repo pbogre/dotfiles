@@ -68,6 +68,8 @@ nvim +'PackerInstall' +qa
 pip install neovim
 nvim +'CocInstall coc-pyright coc-markdownlint coc-clangd coc-cmake coc-java coc-json'
 
+# python3 nvim module
+/opt/homebrew/bin/python3 -m pip install pynvim --user --break-system-packages
 
 # zsh default shell
 echo "\033[92m --~=* Changing default shell to zsh *=~--\033[37m"

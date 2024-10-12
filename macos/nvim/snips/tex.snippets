@@ -1,94 +1,66 @@
-snippet beg "begin{} / end{}" bA
+snippet template "begin template" b
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\geometry{left=30mm, top=15mm,}
+
+\begin{document}
+    Document Title
+    Pietro Bonaldo Gregori, Student ID 1964542
+
+    Here you go!
+\end{document}
+endsnippet
+
+snippet beg "begin" b
 \begin{$1}
 	$0
 \end{$1}
 endsnippet
 
-snippet enum "begin{enumerate} / end{enumerate}" bA
+snippet sec "section" b
+\section{$1}
+    $0
+endsnippet
+
+snippet par "paragraph" b
+\paragraph{$1} $0
+endsnippet
+
+snippet enum "ordered list" b
 \begin{enumerate}
 	\item $0
 \end{enumerate}
 endsnippet
 
-snippet table "begin{tabular}{|c|c|c|} / end{tabular}{|c|c|c|}" w
-\begin{tabular}{|c|c|c|}
+snippet table "table" b
+\begin{tabular}{|c|$1}
 	\hline
-	$1
+	$0
 	\hline
 \end{tabular}
 endsnippet
 
-snippet box "problem box" w
+snippet box "problem box" b
 \begin{tcolorbox}
-	\begin{align*}
-		$1
-	\end{align*}
+    \paragraph{$1} $0
 \end{tcolorbox}
 endsnippet
 
-snippet align "align equations" w
-\begin{align*}
-	$1
-\end{align*}
-endsnippet
-
-snippet ita "italics" w
+snippet it "italics" w
 \textit{$1} $0
 endsnippet
 
-snippet bold "bold" w
+snippet bf "bold" w
 \textbf{$1} $0
 endsnippet
 
 snippet und "underline" w
 \underline{$1} $0
-endsnippet
-
-
-snippet im "Math" wA
-${$1}$ $0
-endsnippet
-
-snippet dm "Math" wA
-\[$1\] 
-$0
-endsnippet
-
-
-snippet or "Logic Or"
-\lor $0
-endsnippet
-
-snippet and "Logic And"
-\land $0
-endsnippet
-
-snippet not "Logic Not"
-\lnot $0
-endsnippet
-
-snippet eq "Logic Equivalent"
-\equiv $0
-endsnippet
-
-snippet true "Logic True"
-\mathbb{T} $0
-endsnippet
-
-snippet false "Logic False"
-\mathbb{F} $0
-endsnippet
-
-snippet int "Math Integral"
-\int{$1 dx} $0
-endsnippet
-
-snippet sqrt "Root" iA
-\sqrt{$1} $0
-endsnippet
-
-snippet tag "Math Comment"
-\tag*{($1)} $0
 endsnippet
 
 snippet ^ "Exponent" iA
