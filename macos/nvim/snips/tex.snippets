@@ -2,6 +2,7 @@ snippet template "begin template" b
 \documentclass{article}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{geometry}
 \usepackage{tabularx}
 \usepackage{graphicx}
@@ -9,8 +10,9 @@ snippet template "begin template" b
 \geometry{left=30mm, top=15mm,}
 
 \begin{document}
-    Document Title
-    Pietro Bonaldo Gregori, Student ID 1964542
+    \title{Document Title}
+    \author{Pietro Bonaldo Gregori (1964542)}
+    \maketitle
 
     Here you go!
 \end{document}
@@ -27,27 +29,43 @@ snippet sec "section" b
     $0
 endsnippet
 
+snippet ssec "subsection" b
+\subsection{$1}
+    $0
+endsnippet
+
 snippet par "paragraph" b
 \paragraph{$1} $0
 endsnippet
 
 snippet enum "ordered list" b
 \begin{enumerate}
-	\item $0
+    \item $0
 \end{enumerate}
 endsnippet
 
+snippet item "unordered list" b
+\begin{itemize}
+    \item $0
+\end{itemize}
+
 snippet table "table" b
+\begin{center}
 \begin{tabular}{|c|$1}
+	\hline
+	$2\\
 	\hline
 	$0
 	\hline
 \end{tabular}
+\end{center}
 endsnippet
 
 snippet box "problem box" b
 \begin{tcolorbox}
-    \paragraph{$1} $0
+    \textbf{$1}
+
+    $0
 \end{tcolorbox}
 endsnippet
 
@@ -65,6 +83,10 @@ endsnippet
 
 snippet ^ "Exponent" iA
 ^{$1}$0
+endsnippet
+
+snippet _ "Sub" iA
+_{$1}$0
 endsnippet
 
 snippet // "Fraction" iA
