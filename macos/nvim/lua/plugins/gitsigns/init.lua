@@ -10,3 +10,4 @@ require('gitsigns').setup({
 })
 
 vim.keymap.set("n", "gp", ":Gitsigns preview_hunk<CR>", options)
+vim.keymap.set("n", "gb", ":Gitsigns blame_line<CR>", options)
