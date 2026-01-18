@@ -1,5 +1,5 @@
 -- Python path
-vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
+vim.g.python3_host_prog = vim.fn.expand("~/.config/nvim/venv/bin/python3")
 
 -- Misc
 vim.o.ignorecase   = true
