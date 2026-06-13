@@ -2,13 +2,15 @@
 cask "alacritty"
 cask "discord"
 cask "disk-inventory-x"
-cask "gimp"
 cask "keepassxc"
+cask "darktable"
 cask "librewolf"
 cask "spotify"
 cask "steam"
 cask "transmission"
 cask "jellyfin-media-player"
+cask "hex-fiend"
+cask "vlc"
 
 # LaTeX
 cask "mactex-no-gui"
@@ -22,7 +24,6 @@ cask "microsoft-teams"
 
 # formulae
 brew "gnuplot"
-brew "python@3.10"
 brew "btop"
 brew "neofetch"
 
